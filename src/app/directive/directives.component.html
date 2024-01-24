@@ -1,0 +1,47 @@
+<h1 appHighlight>Directives Demo</h1>
+<div *ngIf="Result">
+    Result is Pass
+</div>
+
+<hr>
+<h1 appHighlight>*ngIf...else</h1>
+<div *ngIf="isLogIn; else isLogOut">
+    Hello you are loggedin
+</div>
+<ng-template #isLogOut>
+    You are logged out...
+</ng-template>
+
+<hr>
+<h1 appHighlight>*ngSwitch case</h1>
+
+<ul [ngSwitch]="loginName">
+    <li *ngSwitchCase="'admin'">
+        <p>Admin is logged in</p>
+    </li>
+
+    <li *ngSwitchCase="'user'">
+        <p>User is logged in</p>
+    </li>
+
+    <li *ngSwitchDefault>
+        <p>Invalid login name</p>
+    </li>
+</ul>
+
+<hr>
+<h1 appHighlight >NgFor Directive</h1>
+<table border="2">
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th *ngIf="show">Salary</th>
+</tr>
+<tr *ngFor="let obj of Employee">
+    <td>{{obj.id}}</td>
+    <td>{{obj.name}}</td>
+    <td *ngIf="show">{{obj.salary}}</td>
+</tr>
+</table>
+
+<button (click)="show=!show">{{show ?'Hide':'Show'}}</button>

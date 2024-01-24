@@ -1,0 +1,43 @@
+<h1>String Interpolation</h1>
+<table border="2">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>{{product_id}}</td>
+        <td>{{name}}</td>
+        <td>{{price}}</td>
+    </tr>
+
+    <tr>
+        <th>product_id</th>
+        <th>name</th>
+        <th>price</th>
+    </tr>
+
+</table>
+
+<br> <h2>Event Binding</h2>
+<button (click)="showdata()">Event Binding</button>
+
+<hr><h2>Property Binding</h2>
+Product Id<input type="text" [value]="product_id"><br><br>
+Product Name<input type="text" [value]="name"><br><br>
+Product Price<input type="text" [value]="price"><br><br>
+
+<hr><h2>Attribute Binding</h2>
+UserName:<input type="text" [value]="UserName">
+
+<hr><h2>Class Binding</h2>
+<p [class]="MyCSSClassRed">this para comes from myclass property</p>
+<p [class]="myCssClassBlue">this para also comes from myclass property</p>
+
+<hr><h2>Style Binding</h2>
+<p [style.color]="myColor">Text color styled using style binding</p>
+
+<hr>
+<h2>Two way binding</h2>
+<input type="text" [(ngModel)]="UserName">
+<p>Two way binding ! Hello {{UserName}}</p>
